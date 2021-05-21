@@ -17,7 +17,7 @@ class UnitTests(unittest.TestCase) :
         n, p = 10, 0.4
         rat = (1-p)/p
         x, e, var, bmin, bmax, isi  = [], [], [], [], [], []
-        for s in range(1,9) : 
+        for s in range(1,10) : 
             x.append( s ) 
             prob = ( rat**s - rat**n ) / ( 1 - rat**n )
             e.append( prob )
@@ -29,4 +29,4 @@ class UnitTests(unittest.TestCase) :
         val = randomvar( e, variance=var, vmin=bmin, vmax=bmax, isinteger=isi )
         line1=line( x, val )
         axislabels=["start point", "probability of ruin"]
-        assert(check_plot([line1],exppatch=line1,explabels=axislabels,explegend=False,output=True))
+        assert(check_plot([line1],explabels=axislabels,explegend=False,output=True))
